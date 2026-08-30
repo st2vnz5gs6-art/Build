@@ -9,9 +9,15 @@
  *
  * Safe to re-run: it deletes the existing demo group (code TNL8) first.
  */
-import "dotenv/config";
+import { config } from "dotenv";
 import { createClient } from "@supabase/supabase-js";
 import { combineOdds } from "../src/lib/odds";
+
+// .env.local takes precedence (matches Next.js's own env file loading order);
+// dotenv never overwrites a variable that's already set, so this call fills
+// in anything .env.local didn't provide.
+config({ path: ".env.local" });
+config();
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
