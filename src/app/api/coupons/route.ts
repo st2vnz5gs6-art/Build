@@ -11,6 +11,14 @@ type LegPayload = {
 };
 
 export async function POST(req: Request) {
+  try {
+    return await handlePost(req);
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : "unexpected server error" }, { status: 500 });
+  }
+}
+
+async function handlePost(req: Request) {
   const body = await req.json().catch(() => null);
   const groupCode = typeof body?.groupCode === "string" ? body.groupCode.trim().toUpperCase() : "";
   const memberId = typeof body?.memberId === "string" ? body.memberId : "";

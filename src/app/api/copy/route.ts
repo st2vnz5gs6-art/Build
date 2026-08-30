@@ -5,6 +5,14 @@ import { supabaseServer } from "@/lib/supabase/server";
 // while the coupon is still open (pre-kickoff) — copying a locked coupon
 // would be pretending you called it before the fact.
 export async function POST(req: Request) {
+  try {
+    return await handlePost(req);
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : "unexpected server error" }, { status: 500 });
+  }
+}
+
+async function handlePost(req: Request) {
   const body = await req.json().catch(() => null);
   const couponId = typeof body?.couponId === "string" ? body.couponId : "";
   const memberId = typeof body?.memberId === "string" ? body.memberId : "";
