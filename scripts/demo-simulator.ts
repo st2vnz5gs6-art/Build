@@ -9,10 +9,13 @@
  * Every write goes through Supabase, so the app's realtime subscriptions
  * pick it up live — no need to refresh.
  */
-import "dotenv/config";
+import { config } from "dotenv";
 import { createClient } from "@supabase/supabase-js";
 import { evaluateLeg, recomputeCouponStatus } from "../src/lib/resolve";
 import type { FixtureEvent, Leg } from "../src/lib/types";
+
+config({ path: ".env.local" });
+config();
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
