@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: theme("colors.ink.950");
+  color: theme("colors.ink.100");
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Visible focus ring everywhere, keyboard-navigable */
+:focus-visible {
+  outline: 2px solid theme("colors.accent.bright");
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect prefers-reduced-motion: kill custom animations and smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+::selection {
+  background: theme("colors.accent.DEFAULT");
+  color: white;
+}
