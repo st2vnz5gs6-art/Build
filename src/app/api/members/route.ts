@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseServer } from "@/lib/supabase/server";
-import { initialsFromName } from "@/lib/member";
+import { initialsFromName } from "@/lib/initials";
 
 export async function POST(req: Request) {
   try {

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { initialsFromName, setLocalMember } from "@/lib/member";
+import { setLocalMember } from "@/lib/member";
+import { initialsFromName } from "@/lib/initials";
 
 export default function NameEntry({
   groupCode,
