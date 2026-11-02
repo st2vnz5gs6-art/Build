@@ -4,10 +4,16 @@ A local design assurance tool for civil and structural work on SP Transmission p
 of SP Energy Networks specifications, parsed clause by clause, and answers questions, RFIs and document reviews.
 Every requirement it states quotes its source clause verbatim, cited as `[Doc ID, Revision, Clause X.X, p.N]`.
 
-## Setup on Windows (5 commands)
+## Setup on Windows
 
-You need Python 3.11–3.13 (64-bit) from the Company Portal or python.org. Put the specification PDFs in `library\`
-first (see `SOURCES.md`). From this folder, in a Command Prompt:
+You need Python 3.12, 3.13 or 3.14 (64-bit) from the Company Portal or python.org. Put the specification PDFs in
+`library\` first (see `SOURCES.md`).
+
+**Offline install (no internet or PyPI needed).** Use this when pip is blocked. Download the
+`spec-assurance-offline` branch ZIP, which includes a `wheelhouse\` folder of every Windows package for Python
+3.12–3.14. Then double-click **`install.bat`** and, once it finishes, **`run.bat`**.
+
+**Online install (5 commands).** From this folder, in a Command Prompt:
 
 ```bat
 py -m venv .venv
