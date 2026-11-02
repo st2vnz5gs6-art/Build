@@ -1,0 +1,26 @@
+{
+  "_comment": "Order of precedence when documents conflict: first tier governs. Edit to suit the contract. Rules are matched top to bottom against the document ID (regular expressions).",
+  "tiers": [
+    "Contract-specific requirements",
+    "SPEN specifications and policies",
+    "British / European standards",
+    "Industry guidance",
+    "Demo (synthetic, not controlled)"
+  ],
+  "rules": [
+    {"pattern": "^EGL1-", "tier": "Contract-specific requirements"},
+    {"pattern": "^(ER|CSR)-", "tier": "Contract-specific requirements"},
+    {"pattern": "^DEMO-", "tier": "Demo (synthetic, not controlled)"},
+    {"pattern": "^(SUB|ASSET|CAB|ESDD|PRJ)-", "tier": "SPEN specifications and policies"},
+    {"pattern": "^(BS|EN|BS-EN|ISO|IEC)", "tier": "British / European standards"},
+    {"pattern": "^(ENA|TS|NGTS|CIRIA|PAS)", "tier": "Industry guidance"}
+  ],
+  "default_tier": "SPEN specifications and policies",
+  "scope_presets": {
+    "275/400kV substation or HVDC converter station (EGL1)": ["SUB-03-034", "SUB-01-012", "SUB-01-018"],
+    "132kV grid substation": ["SUB-03-026", "SUB-01-012", "SUB-01-018"],
+    "Primary / 33kV switching substation": ["SUB-03-025", "SUB-01-012", "SUB-01-018"],
+    "Secondary substation": ["SUB-03-017", "SUB-01-012", "SUB-01-018"],
+    "Whole library": []
+  }
+}

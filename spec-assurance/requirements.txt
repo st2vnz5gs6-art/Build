@@ -1,0 +1,14 @@
+# Python 3.11 – 3.13 (64-bit). All packages ship Windows wheels; no compiler needed.
+streamlit==1.66.1
+anthropic==2.4.0
+pymupdf==2.1
+python-docx==1.2.0
+openpyxl==3.1.5
+model2vec==0.10.0
+numpy==2.5.4
+pandas==3.1.0
+pydantic==2.14.2
+pillow==13.0.0
+truststore==0.10.5      # uses the Windows certificate store (corporate TLS inspection)
+pytesseract==0.3.13     # optional: only used if Tesseract OCR is installed
+pytest==9.2.0

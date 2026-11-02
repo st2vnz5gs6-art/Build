@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+data/
+# Specification PDFs are SPEN controlled documents marked "Internal Use": kept local, not in git.
+library/*
+!library/README.md
